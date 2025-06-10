@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليلك للحوكمة الشاملة</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d40; /* Deep Teal */
+            --accent-color: #ffc107;  /* Amber/Gold */
+            --background-color: #f7f9f9;
+            --text-color: #212121;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .nav-item.active {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(0, 77, 64, 0.39);
+        }
+        .nav-item:not(.active):hover {
+            background-color: #e0f2f1;
+        }
+        .content-section {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        .content-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .interactive-card {
+            border-right: 4px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interactive-card:hover, .interactive-card.selected {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .tab-button.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        .accordion-button {
+            border-bottom: 2px solid transparent;
+        }
+        .accordion-button.open {
+            color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+        }
+        .hero-gradient {
+            background: linear-gradient(90deg, var(--primary-color) 0%, #00796b 100%);
+        }
+        .section-title {
+            color: var(--primary-color);
+        }
+        .brand-accent {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body class="bg-[#f7f9f9]">
+
+    <div class="container mx-auto">
+        <!-- Header -->
+        <header class="hero-gradient text-white text-center py-16 md:py-24 px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-3">دليلك للحوكمة الشاملة</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto opacity-90">استكشف المبادئ والأنواع والفوائد وأطر العمل ومستقبل الحوكمة بطريقة بصرية وتفاعلية</p>
+            <p class="text-md mt-4 opacity-80">إعداد: فهد الظفيري</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="sticky top-0 z-10 bg-white/80 backdrop-blur-sm shadow-md py-3 px-4">
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3">
+                <button data-target="intro" class="nav-item active rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300">مقدمة</button>
+                <button data-target="principles" class="nav-item rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300">المبادئ</button>
+                <button data-target="types" class="nav-item rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300">الأنواع</button>
+                <button data-target="impact" class="nav-item rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300">الأثر</button>
+                <button data-target="frameworks" class="nav-item rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300">أطر العمل</button>
+                <button data-target="future" class="nav-item rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300">المستقبل</button>
+                <button data-target="sources" class="nav-item rounded-full px-4 py-2 text-sm font-semibold transition-all duration-300">المراجع</button>
+            </div>
+        </nav>
+
+        <main id="main-content" class="p-4 md:p-8">
+            
+            <!-- Section 1: Intro to Governance -->
+            <section id="intro" class="content-section active">
+                <div class="bg-white p-6 md:p-10 rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="prose max-w-none">
+                            <h2 class="text-3xl font-bold section-title mb-4">1. مقدمة للحوكمة: البناء على أسس سليمة</h2>
+                            <p>الحوكمة هي مجموعة من الأنظمة والقواعد والإجراءات التي تضمن توجيه وإدارة المؤسسات بفعالية ومسؤولية. إنها الهيكل الذي يتم من خلاله تحديد الأهداف، ومراقبة الأداء، وإدارة المخاطر، وضمان الامتثال للقوانين والمعايير [1].</p>
+                            <p>في عالم اليوم المتغير بسرعة، أصبحت الحوكمة الرشيدة ضرورية ليس فقط للامتثال التنظيمي، بل لتعزيز الثقة، وتحقيق الاستدامة، وتحسين الأداء [2].</p>
+                        </div>
+                        <div>
+                             <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1770&auto=format&fit=crop" alt="صورة تمثل الحوكمة" class="rounded-lg shadow-md w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/eeeeee/aaaaaa?text=Image+Not+Found';">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Principles of Governance -->
+            <section id="principles" class="content-section">
+                <div class="bg-white p-6 md:p-10 rounded-2xl shadow-lg">
+                    <h2 class="text-3xl font-bold section-title mb-2 text-center">2. مبادئ الحوكمة الأساسية</h2>
+                    <p class="text-center text-gray-600 mb-8 max-w-2xl mx-auto">ترتكز الحوكمة الفعالة على مجموعة من المبادئ العالمية التي تضمن العدالة والشفافية والمساءلة. انقر على كل مبدأ لاستكشاف تفاصيله.</p>
+                    <div id="principles-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Principles will be injected here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Types of Governance -->
+            <section id="types" class="content-section">
+                <div class="bg-white p-6 md:p-10 rounded-2xl shadow-lg">
+                     <h2 class="text-3xl font-bold section-title mb-8 text-center">3. أنواع وأبعاد الحوكمة</h2>
+                    <div class="border-b border-gray-200 mb-6">
+                        <nav class="-mb-px flex justify-center gap-6 overflow-x-auto pb-2" aria-label="Tabs">
+                             <button class="tab-button active shrink-0 pb-4 text-base font-medium text-gray-500 hover:text-gray-700" data-tab="corporate">الشركات</button>
+                             <button class="tab-button shrink-0 pb-4 text-base font-medium text-gray-500 hover:text-gray-700" data-tab="it">تقنية المعلومات</button>
+                             <button class="tab-button shrink-0 pb-4 text-base font-medium text-gray-500 hover:text-gray-700" data-tab="data">البيانات</button>
+                             <button class="tab-button shrink-0 pb-4 text-base font-medium text-gray-500 hover:text-gray-700" data-tab="nonprofit">غير الربحي</button>
+                             <button class="tab-button shrink-0 pb-4 text-base font-medium text-gray-500 hover:text-gray-700" data-tab="esg">البيئية والاجتماعية</button>
+                             <button class="tab-button shrink-0 pb-4 text-base font-medium text-gray-500 hover:text-gray-700" data-tab="public">القطاع العام</button>
+                        </nav>
+                    </div>
+                    <div id="types-tab-content">
+                        <!-- Tab content will be injected here by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Impact of Governance -->
+            <section id="impact" class="content-section">
+                 <div class="bg-white p-6 md:p-10 rounded-2xl shadow-lg">
+                    <div class="text-center mb-10">
+                         <h2 class="text-3xl font-bold section-title mb-2">4. أثر الحوكمة: فوائد وتحديات</h2>
+                         <p class="text-gray-600 max-w-3xl mx-auto">تطبيق الحوكمة الرشيدة يجلب فوائد ملموسة، لكنه لا يخلو من التحديات.</p>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                             <h3 class="text-xl font-bold mb-4">أبرز فوائد الحوكمة (تقييم الأثر)</h3>
+                             <p class="mb-4 text-gray-700">يوضح الرسم البياني التقييم المتصور لأثر الحوكمة في مجالات رئيسية، مما يعكس أهميتها المتزايدة.</p>
+                            <div class="chart-container h-64 md:h-80">
+                                <canvas id="benefitsChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="prose max-w-none">
+                            <h3 class="text-xl font-bold mt-8 mb-4">التحديات الشائعة في التطبيق</h3>
+                            <ul class="space-y-3 text-gray-700">
+                                <li><strong class="font-semibold text-gray-800">مقاومة التغيير:</strong> مواجهة الاعتياد على أساليب عمل مختلفة.</li>
+                                <li><strong class="font-semibold text-gray-800">التعقيد والتكلفة:</strong> الحاجة لاستثمارات كبيرة في الوقت والموارد.</li>
+                                <li><strong class="font-semibold text-gray-800">نقص الخبرة:</strong> الافتقار للخبرات الداخلية اللازمة للتصميم والتنفيذ.</li>
+                                <li><strong class="font-semibold text-gray-800">قياس الفعالية:</strong> صعوبة قياس العائد على الاستثمار بشكل مباشر.</li>
+                                <li><strong class="font-semibold text-gray-800">الموازنة:</strong> تحقيق التوازن بين السيطرة وخطر خنق الابتكار.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Governance Frameworks -->
+            <section id="frameworks" class="content-section">
+                <div class="bg-white p-6 md:p-10 rounded-2xl shadow-lg">
+                    <div class="text-center">
+                         <h2 class="text-3xl font-bold section-title mb-2">5. أطر عمل ومنهجيات الحوكمة</h2>
+                         <p class="text-gray-600 mb-8 max-w-2xl mx-auto">أدوات ومنهجيات عالمية تساعد المؤسسات على تطبيق مبادئ الحوكمة بشكل منظم وفعال.</p>
+                    </div>
+                    <div id="accordion-container" class="space-y-4 max-w-4xl mx-auto">
+                        <!-- Accordion items will be injected here by JS -->
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Section 6: Future of Governance -->
+            <section id="future" class="content-section">
+                 <div class="bg-white p-6 md:p-10 rounded-2xl shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-10 items-center">
+                        <div>
+                             <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1887&auto=format&fit=crop" alt="صورة عن مستقبل الحوكمة" class="rounded-lg shadow-md w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x450/eeeeee/aaaaaa?text=Image+Not+Found';">
+                        </div>
+                         <div class="prose max-w-none">
+                             <h2 class="text-3xl font-bold section-title mb-4">6. مستقبل الحوكمة والتحولات الرقمية</h2>
+                             <p class="mb-6">يتغير مشهد الحوكمة بسرعة مع ظهور التقنيات الجديدة. سيتطلب المستقبل مرونة وقدرة على التكيف مع الابتكارات مع التركيز المتزايد على الأخلاقيات والمسؤولية الاجتماعية.</p>
+                            <ul class="space-y-4">
+                                <li><strong>الذكاء الاصطناعي:</strong> الحاجة لحوكمة تضمن الشفافية والعدالة.</li>
+                                <li><strong>البلوك تشين:</strong> إمكانيات للحوكمة اللامركزية عبر العقود الذكية.</li>
+                                <li><strong>البيانات الضخمة:</strong> حوكمة أكثر حيوية لإدارة جودة وأمن البيانات.</li>
+                                <li><strong>الأخلاقيات:</strong> تركيز متزايد على المسؤولية المجتمعية.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Sources and References -->
+            <section id="sources" class="content-section">
+                 <div class="bg-white p-6 md:p-10 rounded-2xl shadow-lg">
+                     <h2 class="text-3xl font-bold section-title mb-6 text-center">7. المصادر والمراجع</h2>
+                    <ol class="list-decimal pr-5 space-y-2 text-gray-600 max-w-4xl mx-auto text-sm">
+                         <li>The World Bank. "What is Good Governance?".</li>
+                        <li>Organisation for Economic Co-operation and Development (OECD). "OECD Principles of Corporate Governance".</li>
+                        <li>United Nations Development Programme (UNDP). "Governance for Sustainable Development".</li>
+                        <li>International Organization for Standardization (ISO). "ISO 37000: Governance of organizations — Guidance".</li>
+                        <li>Institute of Internal Auditors (IIA). "The Global Internal Audit Standard".</li>
+                        <li>PwC. "Corporate Governance Insights".</li>
+                        <li>ISACA. "COBIT 2019 Framework: Introduction and Methodology".</li>
+                        <li>DAMA International. "The DAMA Guide to the Data Management Body of Knowledge (DMBOK2)".</li>
+                        <li>World Economic Forum. "ESG and the Future of Corporate Governance".</li>
+                        <li>United Nations. "Good Governance and the Millennium Development Goals".</li>
+                        <li>KPMG. "The Value of Good Governance".</li>
+                        <li>National Council of Nonprofits. "Board Roles and Responsibilities".</li>
+                        <li>لائحة حوكمة الشركات، الصادرة عن هيئة السوق المالية بالمملكة العربية السعودية.</li>
+                        <li>قواعد حوكمة الجمعيات والمؤسسات الأهلية، الصادرة عن المركز الوطني لتنمية القطاع غير الربحي بالمملكة العربية السعودية.</li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white mt-12">
+            <div class="container mx-auto px-4 py-8 text-center">
+                <h3 class="text-xl font-bold mb-4">للتواصل والاستفسارات</h3>
+                <div class="flex justify-center items-center gap-6 flex-wrap">
+                    <a href="tel:0597738637" class="flex items-center gap-2 hover:text-amber-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.518.759a11.03 11.03 0 006.364 6.364l.759-1.518a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                        <span>0597738637</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fahad-aldhafeeri-589454251" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-amber-400 transition-colors">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                           <path d="M16.338 16.338H13.67V12.16c0-1.002-.018-2.29-1.396-2.29-1.396 0-1.611 1.09-1.611 2.215v4.253H7.999V7.12h2.56v1.17h.037c.356-.675 1.227-1.396 2.526-1.396 2.703 0 3.203 1.778 3.203 4.092v4.752zM4.698 5.955c-.963 0-1.745-.783-1.745-1.744s.782-1.745 1.745-1.745 1.745.782 1.745 1.745-.782 1.744-1.745 1.744zM5.996 16.338H3.337V7.12h2.66v9.218zM17.67 2H2.33C2.15 2 2 2.15 2 2.33v15.34C2 17.85 2.15 18 2.33 18h15.34c.18 0 .33-.15.33-.33V2.33C18 2.15 17.85 2 17.67 2z" />
+                        </svg>
+                        <span>حسابي في لينكد إن</span>
+                    </a>
+                </div>
+                 <p class="text-sm text-gray-400 mt-8">&copy; 2025. جميع الحقوق محفوظة لفهد الظفيري.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navButtons = document.querySelectorAll('.nav-item');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            function switchSection(targetId) {
+                contentSections.forEach(section => section.classList.remove('active'));
+                navButtons.forEach(button => button.classList.remove('active'));
+
+                document.getElementById(targetId)?.classList.add('active');
+                document.querySelector(`.nav-item[data-target="${targetId}"]`)?.classList.add('active');
+            }
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => switchSection(button.dataset.target));
+            });
+
+            // Section 2: Principles Data & Injection
+            const principlesData = [
+                { title: 'الشفافية', content: 'تقديم معلومات واضحة وصادقة وكاملة لأصحاب المصلحة، وتجنب إخفاء الحقائق.' },
+                { title: 'المساءلة', content: 'تحمل الأفراد والمؤسسات المسؤولية عن قراراتهم وأفعالهم، وتقديم تفسيرات وتبريرات لها.' },
+                { title: 'الإنصاف', content: 'معاملة جميع أصحاب المصلحة بعدل ومساواة، وحماية حقوق الأقليات.' },
+                { title: 'الاستجابة', content: 'قدرة المؤسسة على الاستجابة بسرعة وفعالية لاحتياجات ومخاوف أصحاب المصلحة.' },
+                { title: 'الفعالية والكفاءة', content: 'تحقيق أهداف المؤسسة بأقل قدر من الموارد الممكنة، وضمان الاستخدام الأمثل للموارد.' },
+                { title: 'المشاركة', content: 'إشراك أصحاب المصلحة المعنيين في عمليات اتخاذ القرار حيثما كان ذلك مناسبًا.' },
+            ];
+            const principlesGrid = document.getElementById('principles-grid');
+            principlesGrid.innerHTML = principlesData.map(p => `
+                <div class="interactive-card bg-white p-6 rounded-lg cursor-pointer shadow-sm">
+                    <h4 class="font-bold text-xl text-gray-800">${p.title}</h4>
+                    <p class="text-gray-600 mt-2">${p.content}</p>
+                </div>
+            `).join('');
+
+            // Section 3: Types Data & Injection
+            const typesData = {
+                corporate: {
+                    title: 'حوكمة الشركات',
+                    content: 'تتعلق هذه الحوكمة بالنظام الذي يتم من خلاله توجيه الشركات والتحكم فيها. تضع إطاراً للعلاقات بين مجلس الإدارة، الإدارة التنفيذية، المساهمين، وأصحاب المصلحة الآخرين.',
+                    img: 'https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=1770&auto=format&fit=crop'
+                },
+                it: {
+                    title: 'حوكمة تقنية المعلومات',
+                    content: 'تركز على المواءمة بين استراتيجية تقنية المعلومات واستراتيجية الأعمال للمؤسسة. تضمن أن استثمارات تقنية المعلومات تحقق قيمة للأعمال، وتدير المخاطر المتعلقة بالتقنية.',
+                    img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1770&auto=format&fit=crop'
+                },
+                data: {
+                    title: 'حوكمة البيانات',
+                    content: 'تتضمن إدارة مدى توافر البيانات، سهولة استخدامها، سلامتها وأمنها، وموثوقيتها. تضع السياسات والإجراءات لضمان جودة البيانات وحمايتها والامتثال للوائح.',
+                    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1770&auto=format&fit=crop'
+                },
+                nonprofit: {
+                    title: 'حوكمة القطاع غير الربحي',
+                    content: 'تركز على ضمان أن المنظمة تعمل بكفاءة وشفافية لتحقيق رسالتها وأهدافها الاجتماعية. تتضمن مسؤوليات مجلس الإدارة، والإدارة المالية السليمة، والحفاظ على ثقة المانحين.',
+                    img: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=1770&auto=format&fit=crop'
+                },
+                esg: {
+                    title: 'الحوكمة البيئية والاجتماعية',
+                    content: 'تركز على العوامل البيئية والاجتماعية وممارسات الحوكمة التي تؤثر على أداء الشركة ومسؤوليتها، مثل الاستدامة والمسؤولية الاجتماعية تجاه المجتمع.',
+                    img: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=1770&auto=format&fit=crop'
+                },
+                public: {
+                    title: 'الحوكمة الرشيدة (القطاع العام)',
+                    content: 'تتعلق بإدارة الشؤون العامة بأسلوب شفاف ومسؤول وفعال يراعي مصالح المواطنين. تشمل مبادئ مثل سيادة القانون، والمساواة، والمساءلة.',
+                    img: 'https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                }
+            };
+            const typesTabContent = document.getElementById('types-tab-content');
+            const typeTabButtons = document.querySelectorAll('#types .tab-button');
+            
+            function renderTypeContent(typeKey) {
+                 const type = typesData[typeKey];
+                 typesTabContent.innerHTML = `
+                    <div class="grid md:grid-cols-2 gap-8 items-center fadeIn">
+                        <div>
+                             <img src="${type.img}" alt="${type.title}" class="rounded-lg shadow-md w-full h-auto object-cover" onerror="this.onerror=null;this.src='https://placehold.co/500x350/eeeeee/aaaaaa?text=Image+Not+Found';">
+                        </div>
+                        <div class="prose max-w-none">
+                            <h3 class="text-2xl font-bold section-title">${type.title}</h3>
+                            <p>${type.content}</p>
+                        </div>
+                    </div>`;
+            }
+
+            typeTabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    typeTabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    renderTypeContent(button.dataset.tab);
+                });
+            });
+            renderTypeContent('corporate'); // Initial render
+
+
+            // Section 4: Benefits Chart
+            const benefitsCtx = document.getElementById('benefitsChart').getContext('2d');
+            new Chart(benefitsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['تعزيز الثقة', 'تحسين الأداء', 'إدارة المخاطر', 'الامتثال', 'الاستدامة'],
+                    datasets: [{
+                        label: 'متوسط الأثر المتوقع',
+                        data: [90, 85, 88, 92, 87],
+                        backgroundColor: 'rgba(0, 77, 64, 0.7)',
+                        borderColor: 'rgba(0, 77, 64, 1)',
+                        borderWidth: 1,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, max: 100 } },
+                    plugins: { legend: { display: false }, tooltip: { displayColors: false } }
+                }
+            });
+            
+            // Section 5: Frameworks Data & Injection
+            const frameworksData = [
+                { title: 'COBIT', content: 'إطار عمل للحوكمة والإدارة الشاملة لتقنية المعلومات في المؤسسة، يركز على خلق القيمة من تقنية المعلومات وإدارة المخاطر.' },
+                { title: 'ITIL', content: 'مجموعة من الممارسات التفصيلية لإدارة خدمات تقنية المعلومات (ITSM)، وتركز على محاذاة خدمات تقنية المعلومات مع احتياجات العمل.' },
+                { title: 'ISO/IEC 27000', content: 'عائلة من المعايير الدولية لأمن المعلومات، وأشهرها ISO 27001 التي تحدد متطلبات نظام إدارة أمن المعلومات (ISMS).' },
+                { title: 'NIST Framework', content: 'إطار عمل طوعي قائم على المعايير، والإرشادات، والممارسات الفرعية لإدارة وتقليل مخاطر الأمن السيبراني.' },
+                { title: 'COSO', content: 'إطار عمل للحوكمة الداخلية للمؤسسة، يركز على التحكم الداخلي، وإدارة المخاطر، واكتشاف الاحتيال.' },
+            ];
+            const accordionContainer = document.getElementById('accordion-container');
+            accordionContainer.innerHTML = frameworksData.map(item => `
+                <div class="border rounded-lg overflow-hidden shadow-sm">
+                    <button class="accordion-button w-full flex justify-between items-center p-4 text-right font-bold bg-gray-50 hover:bg-gray-100 transition-colors">
+                        <span>${item.title}</span>
+                        <svg class="w-5 h-5 shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="p-5 bg-white hidden prose max-w-none">
+                        <p>${item.content}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            accordionContainer.querySelectorAll('.accordion-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('svg');
+                    const isOpen = !content.classList.contains('hidden');
+                    
+                    content.classList.toggle('hidden');
+                    button.classList.toggle('open');
+                    icon.classList.toggle('rotate-180', !isOpen);
+                });
+            });
+            
+            switchSection('intro'); // Initial Section
+        });
+    </script>
+</body>
+</html>
